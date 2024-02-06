@@ -1,0 +1,139 @@
+{% include "Header.html" %}
+<script>
+  function showHide() {
+    var getele=document.getElementById("sh");
+    
+    console.log(getele,'sh');
+    if (getele.style.display=='block') {
+      getele.style.display='none';
+    }
+    else {
+      getele.style.display='block';
+    } 
+  }
+</script>
+<style>
+
+.btn:hover{
+  background-color: blue;
+  color: aliceblue;
+}
+</style>
+
+<div class="container p-0  ">
+  
+  <div class="row">
+    <div class="col-md-3">
+      <div>
+        <button onclick="showHide()" class="rounded-3" id="butt">
+          <img src="/static/icons8-dropdown-menu-96.png" width="70rem" alt="">
+          Menu
+        </button>
+      </div>
+
+      <div id="sh"  style="display: block;background:white"> 
+          <a href="/static/resume29jan2024.pdf" class="btn ms-3" style="width: 90%;font-size: larger;">RESUME</a>
+          <a href="/PROJECTS" class="btn ms-3" style="width: 90%;font-size: larger;">PROJECTS</a>          
+          <a href="/SKILL" class="btn ms-3" style="width: 90%;font-size:large;">SKILL </a>          
+          <a href="/WORKEXPERIENCE" class="btn ms-3" style="width: 90%;font-size: larger;">WORK EXPERIENCE</a>          
+
+          <a href="/EDUCATION" class="btn ms-3" style="width: 90%;font-size: larger;">EDUCATION</a>
+          <a href="/STRENGTH" class="btn ms-3" style="width: 90%;font-size: larger;">STRENGTHS</a>
+          <a href="/HOBBY" class="btn ms-3" style="width: 90%;font-size: larger;">HOBBY</a>
+          
+      </div>
+    </div>
+
+    
+    <div class="col-md-9">
+      <h1 class="bg-dark text-white"><center>My Computer Language Skill</center></h1>
+        <div class="row">
+          {% for i in item  %}
+              <div align="center" class="col-md-3 bg-white rounded-4 m-3" width="50rem">
+                <div class="row mb-3">
+                  <div class="w-100 ">
+                    <h6 class="mt-1">{{i.name}}</h6><br>
+                    <img  src={{i.Photo}} class="rounded-circle border border-dark " width="100rem" height="100rem" style="margin-top: -5%;" >
+                  </div>
+                  <label class="  bg-dark text-white mt-2">{{i.subTitle}}</label>
+                </div>
+              </div>        
+          {% endfor %}
+        </div>
+    
+     
+
+
+
+
+
+
+
+
+{% comment %} <h1>Hello</h1>
+
+<div>
+    
+    Audio Message
+    <input type="file" id="audioFileInput" name="foo" value="/Recording.mp3" /> 
+    <button onclick="playAudio()" >Play</button>
+    <!-- <audio id='my_audio' src='sound'  autoPlay="autoplay" loop="loop" > -->
+    <script>
+      document.foo.submit()
+     function playAudio() {
+            var file = document.getElementById("audioFileInput").files[0];
+
+            console.log(file,'file');
+
+            var audio = new Audio();
+            
+            audio.src = URL.createObjectURL(file); 
+            console.log(URL.createObjectURL(file));
+  
+            var fileType = file.type; 
+            
+            if (audio.canPlayType(fileType) === "") { 
+                alert("This file cannot be played."); 
+            }
+            else {
+                try { 
+                    audio.play(); 
+                } catch (e) { 
+                    if (e.name === "NotAllowedError"  
+                        || e.name === "SecurityError") { 
+                        alert("This file cannot be played."); 
+                    } else { 
+                        throw e; 
+                    } 
+                } 
+            } 
+        } 
+
+    </script>
+    
+    
+    <br />    
+    
+    <div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <input onclick="Person()" id="demo" class="button" name="accept" type="submit" value="Send"  />
+<br>
+              <button id="demo" type="submit" onclick="audio.play()">Play</button>
+              <input type="submit" id="demo"   onclick="audio.play()">
+              <h3 align='center' >Hello I Am Syed <br /> And <br /> I Full Stack Developer</h3>
+          </div>
+        </div>
+
+
+
+          <div class="row">
+              <div class="col-md-6">a</div>
+              <div class="col-md-6">b</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ {% endcomment %}

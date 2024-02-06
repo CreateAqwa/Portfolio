@@ -1,0 +1,49 @@
+{% include "Header.html" %}
+<div class="container-fluid bg-dark">
+
+    <div class="container text-white"><br><br>
+        <a href="/" style='padding-top: 10%;' >
+            <img src="/static/turn-back.png" width="40rem"> Back
+        </a>
+        <center><h1>Computer Languages Projects</h1></center>
+
+        
+
+        <br>
+    </div>
+    
+    
+</div>
+
+<div class="container">
+  <div class="row">
+    {% for i in data %}
+
+      <div class="col-md-4 mt-3 " >
+        <div class="card" style="width: 18rem; height: 10rem;" >
+            <div class="card-body">
+              <h5 class="card-title">{{i.ProjectName}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{i.LanguageUse}}</h6>
+              <p class="card-text">{{i.Year}}
+              
+                {% if i.UrlLive == '.' %}
+                  {{pass}}
+                {% else %}
+                  <a class="btn btn-warning" href={{i.UrlLive}} style='text-decoration: none;'>Live View
+                  </a>
+                {% endif %}
+
+              </p>
+
+            </div>
+          </div>
+      </div>
+    
+    {% endfor %}
+  </div>
+
+    <!-- <a class="btn btn-warning" href="https://syed1.pythonanywhere.com/" style='text-decoration: none;'>  Now Live</a>
+    <a class="btn btn-warning" href="https://super121.netlify.app/" style='text-decoration: none;'>  Now Live</a> -->
+
+</div>
+

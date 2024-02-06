@@ -1,0 +1,27 @@
+{% include "Header.html" %}
+<div class="container-fluid bg-dark">
+
+    <div class="container text-white"><br><br>
+        <a href="/" style='padding-top: 10%;' >
+            <img src="/static/turn-back.png" width="40rem"> Back
+        </a>
+        <center><h1>SKILL</h1></center>
+        <center><h3>Knowledge, Experience, Ability, Training, Learning </h3></center>
+        <br>
+    </div>
+</div>
+<div class="container-fluid mt-3 ">
+    {% for i in skill %}
+    <div align="center">
+        <div align="left" class="card text-white bg-primary mb-3 " style="width: 70%;">
+            <div class="card-header bg-dark " sty>{{i.LanguageName}}</div>
+            <div class="card-body">
+              <h5 class="card-title">{{i.WhatSpecial}}</h5>
+              <p class="card-text">{{i.Disc}}</p>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+
+    
+</div>
